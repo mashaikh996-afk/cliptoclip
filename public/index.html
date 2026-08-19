@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>ASJADSCLIP</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="brand-mark">&gt;_</div>
+        <div>
+          <div class="brand-name">ASJADSCLIP</div>
+          <div class="brand-subtitle">clipboard / 01</div>
+        </div>
+      </div>
+      <div class="status">ready for handoff</div>
+    </header>
+    <main>
+      <section class="intro">
+        <div class="eyebrow">A calmer way to move code</div>
+        <h1>Code in.<br><span>Code out.</span></h1>
+        <p class="intro-text">Move a code snippet from one device to another using a simple name. No Bluetooth. No account. No pairing.</p>
+        <div class="badges">
+          <div class="badge">No accounts</div>
+          <div class="badge">Any device</div>
+          <div class="badge">Auto-delete</div>
+        </div>
+      </section>
+      <section class="workspace">
+        <article class="panel save-panel">
+          <div class="panel-heading">
+            <div>
+              <div class="panel-number">01 / send</div>
+              <h2>Leave a clip</h2>
+            </div>
+            <div class="method">POST</div>
+          </div>
+          <form id="save-form">
+            <div class="field">
+              <label class="field-label" for="save-name">
+                <span>clip name</span>
+                <span class="hint">required</span>
+              </label>
+              <input id="save-name" maxlength="80" placeholder="morning-query" required />
+            </div>
+            <div class="field">
+              <label class="field-label" for="save-language">
+                <span>language</span>
+                <span class="hint">optional</span>
+              </label>
+              <input id="save-language" maxlength="40" placeholder="javascript" />
+            </div>
+            <div class="field">
+              <label class="field-label" for="save-expiration">
+                <span>availability</span>
+                <span class="hint">privacy</span>
+              </label>
+              <select id="save-expiration">
+                <option value="never">Keep until replaced</option>
+                <option value="10m">Delete after 10 minutes</option>
+                <option value="1h">Delete after 1 hour</option>
+                <option value="24h">Delete after 24 hours</option>
+                <option value="7d">Delete after 7 days</option>
+                <option value="once">View once, then destroy</option>
+              </select>
+              <p id="expiration-help" class="help-text">The clip is automatically removed when this window ends.</p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="save-code">
+                <span>code</span>
+                <span id="char-count" class="hint">0 chars</span>
+              </label>
+              <textarea id="save-code" maxlength="100000" placeholder="const handoff = true;\n\n// paste something useful here" required></textarea>
+            </div>
+            <button class="primary" id="save-button" type="submit"><span>Leave clip</span><span>&gt;</span></button>
+          </form>
+          <div id="save-message"></div>
+        </article>
+        <div></div>
+        <article class="panel get-panel">
+          <div class="panel-heading">
+            <div>
+              <div class="panel-number">02 / receive</div>
+              <h2>Find your clip</h2>
+            </div>
+            <div class="method">GET</div>
+          </div>
+          <form id="get-form">
+            <div class="retrieve-row">
+              <input id="get-name" placeholder="type the clip name" required />
+              <button class="retrieve" id="get-button" type="submit">&gt;</button>
+            </div>
+          </form>
+          <div class="result" id="result">
+            <div class="empty">
+              <div>
+                <div style="font-size: 30px; opacity: .45;">&lt;/&gt;</div>
+                <p>Enter a clip name to pull it across.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <span>Built for the in-between moments</span>
+      <span>temporary by design · private by default</span>
+    </footer>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

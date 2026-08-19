@@ -1,0 +1,12 @@
+{
+  "name": "cliptoclip",
+  "version": "0.1.0",
+  "description": "A tiny temporary clipboard service for moving code snippets between devices",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
